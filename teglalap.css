@@ -1,0 +1,13 @@
+td {
+  border: 1px solid;
+  padding: 50px 50px;
+}
+#table1 td:hover {
+  background-color: red;
+}
+.remove {
+  border:none;
+}
+#table1 td.remove:hover {
+  background-color: white;
+}
