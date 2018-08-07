@@ -57,12 +57,7 @@
 			<div id="gameovertext">GAME OVER</div>
 			<div id="resultsavedpeople"></div>
 			<div id="resulttext">embert mentettetek meg</div>
-			<form action="https://formspree.io/laszlo.nikhazy@gmail.com" method="POST" target="_blank">
-				<input type="hidden" name="_replyto" value="laszlo.nikhazy@gmail.com">
-				<textarea name="body" id="emailbody" style="display: none;">
-				</textarea>
-				<input id="sendemailbutton" type="submit" value="Send email">
-			</form>
+			<button id="sendemailbutton">Send email</button>
 		</div>
 
 		<script type="text/javascript">
@@ -277,8 +272,11 @@
 				function gameEnd() {
 					$("#resultsavedpeople").text(SAVED_PEOPLE);
 					$("#overlay").show();
-					$("#emailbody").text("Kedves Kódtörők! Gratulálunk, " + SAVED_PEOPLE +
-						" embert sikerült megmenteni! Üdvözlettel: SzabaSzoba Csapat")
+					$("#sendemailbutton").click(function() {
+						window.open('mailto:tori.tunde@gmail.com?subject=SzabaSzoba&body=' +
+						"Kedves%20K%C3%B3dt%C3%B6r%C5%91k!%0AGratul%C3%A1lunk%2C%20" + SAVED_PEOPLE +
+						"%20embert%20siker%C3%BClt%20megmenteni!%0A%C3%9Cdv%C3%B6zlettel%3A%20SzabaSzoba%20Csapat");
+					});
 					timerStop();
 					if (FOUND_COUNT >= 3) {
 						$('#gameovertext').text("Gratulálok!");
