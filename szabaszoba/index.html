@@ -1,0 +1,325 @@
+<html>
+	<head>
+		<script src="jquery-1.10.2.js"></script>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="admin">
+			<input type="text" />
+		</div>
+		
+		<div id="ukmap">
+			<img id="ukimage" src="uk.png">
+			<div class="city" id="inverness" style="top: 89px; left: 185px;"></div>
+			<div class="city" id="aberdeen" style="top: 120px; left: 270px;"></div>
+			<div class="city target" id="glasgow" style="top: 215px; left: 174px;"></div>
+			<div class="city" id="edinburgh" style="top: 211px; left: 225px;"></div>
+			<div class="city" id="londonderry" style="top: 282px; left: 42px;"></div>
+			<div class="city" id="dumfries" style="top: 277px; left: 195px;"></div>
+			<div class="city" id="newcastle" style="top: 280px; left: 290px;"></div>
+			<div class="city" id="belfast" style="top: 311px; left: 100px;"></div>
+			<div class="city target" id="leeds" style="top: 369px; left: 297px;"></div>
+			<div class="city" id="manchester" style="top: 395px; left: 270px;"></div>
+			<div class="city" id="liverpool" style="top: 402px; left: 237px;"></div>
+			<div class="city" id="kingston" style="top: 372px; left: 348px;"></div>
+			<div class="city" id="sheffield" style="top: 402px; left: 303px;"></div>
+			<div class="city" id="birmingham" style="top: 473px; left: 285px;"></div>
+			<div class="city" id="leicester" style="top: 467px; left: 321px;"></div>
+			<div class="city" id="aberystwyth" style="top: 486px; left: 180px;"></div>
+			<div class="city" id="norwich" style="top: 458px; left: 429px;"></div>
+			<div class="city" id="cambridge" style="top: 498px; left: 386px;"></div>
+			<div class="city" id="luton" style="top: 522px; left: 362px;"></div>
+			<div class="city" id="oxford" style="top: 536px; left: 317px;"></div>
+			<div class="city" id="cardiff" style="top: 554px; left: 221px;"></div>
+			<div class="city" id="bristol" style="top: 566px; left: 244px;"></div>
+			<div class="city" id="london" style="top: 550px; left: 370px;"></div>
+			<div class="city target" id="southampton" style="top: 592px; left: 308px;"></div>
+			<div class="city" id="plymouth" style="top: 632px; left: 173px;"></div>
+		</div>
+		
+		<div id="rightside">
+			<div id="countdown">
+				10:00
+			</div>
+
+			<div id="triestext">Hátralévő próbálkozások:</div>
+			<div id="triesleft"></div>
+			<div id="savedpeopletext">Megmentett emberek:</div>
+			<div id="savedpeople"></div>
+		</div>
+
+		<div id="correctguess" class="feedback">Helyes!</div>
+		<div id="wrongguess" class="feedback">Itt nem<br>támadnak!</div>
+
+		<div id="overlay"></div>
+		<div id="resultscreen" class="feedback">
+			<div id="gameovertext">GAME OVER</div>
+			<div id="resultsavedpeople"></div>
+			<div id="resulttext">embert mentettetek meg</div>
+			<form action="http://formspree.io/laszlo.nikhazy@gmail.com" method="POST">
+				<input type="hidden" name="_replyto" value="laszlo.nikhazy@gmail.com">
+				<textarea name="body" style="display: none;">
+					Kedves Kódtörők! Gratulálunk, 42 embert sikerült megmenteni! Üdvözlettel: SzabaSzoba Csapat
+				</textarea>
+				<input type="submit" value="Send email">
+			</form>
+		</div>
+
+		<script type="text/javascript">
+			$(window).bind('load', function() {
+				// Just for placing cities
+				$("#ukmap").click(function(event) {
+					console.log("click y: " + event.offsetY + " x: " + event.offsetX);
+				});
+
+				var GAME_STARTED = false;
+				var NUMBER_OF_TRIES = 5;
+				var SAVED_PEOPLE = 0;
+				var CITY_POPULATION = 1000000;
+				var TIME_BONUS_FACTOR = 0.5;
+				var FOUND_TARGET = { "leeds" : false, "glasgow" : false, "southampton": false };
+				var FOUND_COUNT = 0;
+				$("#triesleft").text(NUMBER_OF_TRIES);
+				$("#savedpeople").text(SAVED_PEOPLE);
+
+				$(".city").click(function() {
+					if (!GAME_STARTED) {
+						//return;
+					}
+					if (NUMBER_OF_TRIES <= 0) {
+						return;
+					}
+					let x = parseInt(this.style.left.replace("px", ""));
+					let y = parseInt(this.style.top.replace("px", ""));
+					console.log(x + " , " + y);
+					if ($(this).hasClass("target")) {
+						correctTarget(this.id, x, y);
+					} else {
+						wrongTarget(x, y);
+						
+					}
+					decreaseTryNumber();
+				});
+
+				function correctTarget(city, x, y) {
+					if (!FOUND_TARGET[city]) { 
+						FOUND_TARGET[city] = true;
+						FOUND_COUNT++;
+						$('#correctSoundEffect')[0].play();
+						$('#correctguess').show();
+						setTimeout(
+							function() { $('#correctguess').hide(); },
+						2000);
+						$("#ukmap").append(
+							"<img src='hitler.png' class='hitler' style='" + 
+							" top: " + (y-10) + "px; left: " + (x-6) + "'>");
+						SAVED_PEOPLE += CITY_POPULATION;
+						if (GAME_STARTED) {
+							var remainingMillis = finishTime - (new Date()).getTime();
+							SAVED_PEOPLE += Math.floor(remainingMillis * TIME_BONUS_FACTOR);
+						}
+						$("#savedpeople").text(SAVED_PEOPLE);
+						if (FOUND_COUNT >= 3) {
+							setTimeout(gameEnd, 1000);
+						}
+					}
+				}
+
+				function wrongTarget(x, y) {
+					$('#wrongSoundEffect')[0].play();
+					$('#wrongguess').show();
+						setTimeout(
+							function() { $('#wrongguess').hide(); },
+						2000);
+					$("#ukmap").append(
+						"<img src='peace.png' class='peace' style='" + 
+						" top: " + (y-10) + "px; left: " + (x-6) + "'>");
+				}
+
+                function decreaseTryNumber() {
+                    NUMBER_OF_TRIES -= 1;
+					$("#triesleft").text(NUMBER_OF_TRIES);
+					if (NUMBER_OF_TRIES <= 0) {
+						setTimeout(gameEnd, 1000);
+					}
+                }
+
+				/* TIMER */
+				var finishTime;
+				var totalTimeSec = 600;
+				var timer;
+				function timerStart() {
+					timerStop();
+					finishTime = (new Date()).getTime() + 1000 * totalTimeSec;
+					timer = setInterval(
+						function() {
+							timerTick();
+						},
+						17
+					);
+				}
+
+				function timerStop() {
+					clearInterval(timer);
+					$('#heartSlowSound')[0].pause();
+					$('#heartFastSound')[0].pause();
+				}
+
+				var playedAnnounce1 = false;
+				var playedAnnounce2 = false;
+				var playedAnnounce4 = false;
+				function timerTick() {
+					var remainingMillis = finishTime - (new Date()).getTime();
+					if (remainingMillis > 0 ) {
+						// Clock update
+						var ms = Math.floor(remainingMillis % 1000);
+						var s = Math.floor(remainingMillis / 1000) % 60;
+						var m = Math.floor(remainingMillis / 1000 / 60);
+						if (ms < 10) {
+							ms = "00" + ms;
+						} else if (ms < 100) {
+							ms = "0" + ms;
+						}
+						if (s < 10) {
+							s = "0" + s;
+						}
+						if (m < 10) {
+							m = "0" + m;
+						}
+						$("#countdown").text(m + ":" + s);
+
+						// Sounds
+						if (remainingMillis <= 1 * 1000) {
+							$('#heartSlowSound')[0].pause();
+							$('#heartFastSound')[0].pause();
+						} else if (remainingMillis <= 10 * 1000) {
+							$('#heartSlowSound')[0].pause();
+							$('#heartFastSound')[0].play();
+						} else if (remainingMillis <= 30 * 1000) {
+							$('#heartSlowSound')[0].play();
+							$('#heartFastSound')[0].pause();
+						} else if (remainingMillis <= (1 * 60 + 1) * 1000 && remainingMillis > (1 * 60 - 1) * 1000) {
+							if (!playedAnnounce1) {
+								playedAnnounce1 = true;
+								$('#announce_1')[0].play();
+							}
+						} else if (remainingMillis <= (2 * 60 + 1) * 1000 && remainingMillis > (2 * 60 - 1) * 1000) {
+							if (!playedAnnounce2) {
+								playedAnnounce2 = true;
+								$('#announce_2')[0].play();
+							}
+						} else if (remainingMillis <= (4 * 60 + 1) * 1000 && remainingMillis > (4 * 60 - 1) * 1000) {
+							if (!playedAnnounce4) {
+								playedAnnounce4 = true;
+								$('#announce_4')[0].play();
+							}
+						} /*else if (remainingMillis <= (6 * 60 + 1) * 1000 && remainingMillis > (6 * 60 - 1) * 1000) {
+							if (!playedAnnounce4) {
+								playedAnnounce4 = true;
+								$('#pullUpLong')[0].play();
+							}
+						} else if (remainingMillis <= (8 * 60 + 1) * 1000 && remainingMillis > (8 * 60 - 1) * 1000) {
+							if (!playedAnnounce4) {
+								playedAnnounce4 = true;
+								$('#pullUpLong')[0].play();
+							}
+						}*/
+					} else {
+						timerStop();
+						outOfTime();
+					}
+				}
+
+
+				/* ADMIN */
+				$("#admin input").bind('input', function(e) {
+					var input = $("#admin input");
+					var inputText = input.val();
+					if (inputText == "starttimer") {
+						timerStart();
+						input.val("");
+					} else if (inputText == "startgame") {
+						input.val("");
+						startGame();
+					} else if (inputText == "stop") {
+						timerStop();
+						input.val("");
+					} else if (inputText.length == 5 && inputText[2] == ":") {
+						timerStop();
+						var minutes = parseInt(inputText[0] + inputText[1]);
+						var seconds = parseInt(inputText[3] + inputText[4]);
+						var allSeconds = 60 * minutes + seconds;
+						totalTimeSec = allSeconds;
+						$('#countdown').text(inputText);
+						input.val("");
+					}
+				});
+
+				/* JATEK ESEMENY */
+				function startGame() {
+					$('#announce_welcome')[0].play();
+					setTimeout(
+						function() {
+							GAME_STARTED = true; 
+							timerStart();
+							$('#pullUpShort')[0].play();
+							},
+						13000);
+				}
+
+				function outOfTime() {
+					gameEnd();
+					setTimeout(
+						function() { $('#announce_lose')[0].play(); },
+					1000);
+				}
+
+				function gameEnd() {
+					$("#resultsavedpeople").text(SAVED_PEOPLE);
+					$("#overlay").show();
+					timerStop();
+					if (FOUND_COUNT >= 3) {
+						$('#gameovertext').text("Gratulálok!");
+						$('#winSound')[0].play();
+						setTimeout(
+							function() { $('#announce_win')[0].play(); },
+						1000);
+					} else {
+						$('#timeOutSound')[0].play();
+					}
+					$('#resultscreen').slideDown(800);
+				}
+
+			});
+		</script>
+
+		<!-- Sounds used from the following web sites:
+		http://soundbible.com/1455-Train-Horn-Low.html
+		http://soundbible.com/1496-Japanese-Temple-Bell-Small.html
+		http://soundbible.com/1474-Temple-Bell-Bigger.html
+		-->
+		<audio id="lockSound" src="hangok/lock-1.mp3" preload="auto"></audio>
+		<audio id="heartSlowSound" src="hangok/heartbeat-2.mp3" preload="auto"></audio>
+		<audio id="heartFastSound" src="hangok/heartbeat-3.mp3" preload="auto"></audio>
+		<audio id="winSound" src="hangok/gong-1.mp3" preload="auto"></audio>
+		<audio id="timeOutSound" src="hangok/bell-1.mp3" preload="auto"></audio>
+
+		<audio id="announce_welcome" src="hangok/announcements-hu/announce_welcome.mp3" preload="auto"></audio>
+		<audio id="announce_win" src="hangok/announcements-hu/announce_win.mp3" preload="auto"></audio>
+		<audio id="announce_lose" src="hangok/announcements-hu/announce_lose.mp3" preload="auto"></audio>
+		<audio id="announce_9" src="hangok/announcements-hu/announce_9mins.mp3" preload="auto"></audio>
+		<audio id="announce_7" src="hangok/announcements-hu/announce_7mins.mp3" preload="auto"></audio>
+		<audio id="announce_6" src="hangok/announcements-hu/announce_6mins.mp3" preload="auto"></audio>
+		<audio id="announce_5" src="hangok/announcements-hu/announce_5mins.mp3" preload="auto"></audio>
+		<audio id="announce_4" src="hangok/announcements-hu/announce_4mins.mp3" preload="auto"></audio>
+		<audio id="announce_3" src="hangok/announcements-hu/announce_3mins.mp3" preload="auto"></audio>
+		<audio id="announce_2" src="hangok/announcements-hu/announce_2mins.mp3" preload="auto"></audio>
+		<audio id="announce_1" src="hangok/announcements-hu/announce_1min.mp3" preload="auto"></audio>
+		<audio id="pullUpLong" src="hangok/pull-up-long.mp3" preload="auto"></audio>
+		<audio id="pullUpShort" src="hangok/pull-up-short.mp3" preload="auto"></audio>
+		<audio id="correctSoundEffect" src="hangok/correct-answer.mp3" preload="auto"></audio>
+		<audio id="wrongSoundEffect" src="hangok/wrong-answer.mp3" preload="auto"></audio>
+
+	</body>
+</html>
