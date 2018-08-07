@@ -57,12 +57,12 @@
 			<div id="gameovertext">GAME OVER</div>
 			<div id="resultsavedpeople"></div>
 			<div id="resulttext">embert mentettetek meg</div>
-			<form action="http://formspree.io/laszlo.nikhazy@gmail.com" method="POST">
+			<form action="https://formspree.io/laszlo.nikhazy@gmail.com" method="POST">
 				<input type="hidden" name="_replyto" value="laszlo.nikhazy@gmail.com">
 				<textarea name="body" style="display: none;">
 					Kedves Kódtörők! Gratulálunk, 42 embert sikerült megmenteni! Üdvözlettel: SzabaSzoba Csapat
 				</textarea>
-				<input type="submit" value="Send email">
+				<input id="sendemailbutton" type="submit" value="Send email">
 			</form>
 		</div>
 
@@ -272,7 +272,7 @@
 					gameEnd();
 					setTimeout(
 						function() { $('#announce_lose')[0].play(); },
-					1000);
+					2000);
 				}
 
 				function gameEnd() {
@@ -284,7 +284,7 @@
 						$('#winSound')[0].play();
 						setTimeout(
 							function() { $('#announce_win')[0].play(); },
-						1000);
+						2000);
 					} else {
 						$('#timeOutSound')[0].play();
 					}

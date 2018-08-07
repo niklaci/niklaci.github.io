@@ -117,6 +117,13 @@ div.feedback {
     padding-right: 100px;
 }
 
+#sendemailbutton {
+    color: white;
+    font-family: 'counterstrike';
+    background-color: black;
+    font-size: 30px;
+}
+
 div#countdown {
     font-family: 'digitalFont';
     color: red;
