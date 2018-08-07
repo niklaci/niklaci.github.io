@@ -40,7 +40,7 @@
 		
 		<div id="rightside">
 			<div id="countdown">
-				10:00
+				15:00
 			</div>
 
 			<div id="triestext">Hátralévő próbálkozások:</div>
@@ -57,10 +57,9 @@
 			<div id="gameovertext">GAME OVER</div>
 			<div id="resultsavedpeople"></div>
 			<div id="resulttext">embert mentettetek meg</div>
-			<form action="https://formspree.io/laszlo.nikhazy@gmail.com" method="POST">
+			<form action="https://formspree.io/laszlo.nikhazy@gmail.com" method="POST" target="_blank">
 				<input type="hidden" name="_replyto" value="laszlo.nikhazy@gmail.com">
-				<textarea name="body" style="display: none;">
-					Kedves Kódtörők! Gratulálunk, 42 embert sikerült megmenteni! Üdvözlettel: SzabaSzoba Csapat
+				<textarea name="body" id="emailbody" style="display: none;">
 				</textarea>
 				<input id="sendemailbutton" type="submit" value="Send email">
 			</form>
@@ -147,7 +146,7 @@
 
 				/* TIMER */
 				var finishTime;
-				var totalTimeSec = 600;
+				var totalTimeSec = 900;
 				var timer;
 				function timerStart() {
 					timerStop();
@@ -278,6 +277,8 @@
 				function gameEnd() {
 					$("#resultsavedpeople").text(SAVED_PEOPLE);
 					$("#overlay").show();
+					$("#emailbody").text("Kedves Kódtörők! Gratulálunk, " + SAVED_PEOPLE +
+						" embert sikerült megmenteni! Üdvözlettel: SzabaSzoba Csapat")
 					timerStop();
 					if (FOUND_COUNT >= 3) {
 						$('#gameovertext').text("Gratulálok!");
