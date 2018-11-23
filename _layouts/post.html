@@ -1,0 +1,21 @@
+---
+layout: blog
+---
+
+<article class="post">
+ <div class="space-extra-small">
+ </div>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+
+  <div style="position:relative;height:0;padding-bottom:81.97%;overflow:hidden;">
+    <iframe style="position:absolute;top:0;left:0;width:50%;height:50%;" src="https://makecode.microbit.org/---run?id={{ page.runid }}" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0">
+    </iframe>
+  </div>
+    
+
+  {% include disqus.html %}
+</article>
+
