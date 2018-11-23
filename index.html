@@ -12,6 +12,11 @@ layout: default
         {{ post.excerpt }}
       </div>
 
+      <!--<div style="position:relative;height:0;padding-bottom:80%;overflow:hidden;">
+        <iframe style="position:absolute;top:0;left:0;width:50%;height:50%;" src="https://makecode.microbit.org/---run?id={{ post.runid }}" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0">
+        </iframe>
+      </div>-->
+
       <a href="{{ site.baseurl }}{{ post.url }}" class="button button-primary">Részletek</a>
     </article>
   {% endfor %}

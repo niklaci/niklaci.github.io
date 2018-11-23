@@ -6,7 +6,9 @@
 name: micro:bit feladatok
 
 # Short bio or description (displayed in the header)
-description: Programozás kezdőknek, játékos felfedeztető módszerrel
+description: Játékos programozás kezdőknek, felfedeztető módszerrel
+
+author: Nikházy László
 
 
 #
@@ -16,7 +18,7 @@ description: Programozás kezdőknek, játékos felfedeztető módszerrel
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: laszlo.nikhazy8@gmail.com
+  email: laszlo.nikhazy@gmail.com
   facebook: laszlo.nikhazy
   flickr:
   github: niklaci

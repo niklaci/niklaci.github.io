@@ -25,14 +25,22 @@
              <div class="site-info">
                <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
                <p class="site-description">{{ site.description }}</p>
+               <p class="site-description">{{ site.author }}</p>
              </div>
              <nav>
                <a href="{{ site.baseurl }}/">Blog</a>
+               <a href="#contacts" class="page-scroll">Kapcsolatok</a>
                <!--<a href="{{ site.baseurl }}/about">About</a>
                <a href="{{ site.baseurl }}/projects">Projects</a>-->
              </nav>
            </header>
          </div>
+         <div class="container" style="width:40%;margin:auto;margin-top:20px;">
+          <div style="position:relative;height:0;padding-bottom:81.97%;">
+            <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/---run?id=_8MdAsKLMrbkp" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0">
+            </iframe>
+          </div>
+        </div>
        </div>
        
         <div class="container">
@@ -65,9 +73,10 @@
       {{ content }}
     </div>
 
-    <div class="wrapper-footer">
+    <div id="contacts" class="wrapper-footer">
       <div class="container">
         <footer class="footer">
+            <h2>Kapcsolatok</h2>
             <div class="svg-icon">
           {% include svg-icons.html %}
             </div>
