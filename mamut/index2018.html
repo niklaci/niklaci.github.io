@@ -29,10 +29,6 @@ h4 {
 a.list-group-item {
 	padding: 5px;
 }
-
-span.boys {
-  color: blue;
-}
 </style>
 
 <script type="text/javascript">
@@ -43,8 +39,8 @@ span.boys {
 	}
 
 	function songNumberChanged(id) {
-		if (!(id >= 0 && id <= 58)) id = 0;
-		for (i = 0; i <= 58; ++i)
+		if (!(id >= 0 && id <= 62)) id = 0;
+		for (i = 0; i <= 62; ++i)
 		{
 			if (i == id) document.getElementById(i).style.display = 'block';
 			else document.getElementById(i).style.display = 'none';
@@ -80,66 +76,63 @@ span.boys {
 
 <div id="song-row" class="row" style="top: 70px; bottom: 0; width: 90%; overflow: scroll">
 <div id ="0" class="list-group">
-  <a class="list-group-item" onclick="songSelected(1)">1. Ég a város</a>
-  <a class="list-group-item" onclick="songSelected(2)">2. Varga Miklós: Európa</a>
-  <a class="list-group-item" onclick="songSelected(3)">3. Már minálunk babám</a>
-  <a class="list-group-item" onclick="songSelected(4)">4. Edda: A kör</a>
-  <a class="list-group-item" onclick="songSelected(5)">5. Edda: A hűtlen</a>
-  <a class="list-group-item" onclick="songSelected(6)">6. Quimby: Most múlik pontosan</a>
-  <a class="list-group-item" onclick="songSelected(7)">7. Ohio</a>
-  <a class="list-group-item" onclick="songSelected(8)">8. Illés: Az utcán</a>
-  <a class="list-group-item" onclick="songSelected(9)">9. Illés: Miért hagytuk, hogy így legyen</a>
-  <a class="list-group-item" onclick="songSelected(10)">10. Illés: Újra itt van</a>
-  <a class="list-group-item" onclick="songSelected(11)">11. Bródy: Ha én rózsa volnék</a>
-  <a class="list-group-item" onclick="songSelected(12)">12. Kockaéder: Ha én gyökjel volnék</a>
-  <a class="list-group-item" onclick="songSelected(13)">13. Omega: Petróleumlámpa</a>
-  <a class="list-group-item" onclick="songSelected(14)">14. Omega: Régi csibészek</a>
-  <a class="list-group-item" onclick="songSelected(15)">15. LGT: Valaki mondja meg</a>
-  <a class="list-group-item" onclick="songSelected(16)">16. Halász Judit: Micimackó</a>
-  <a class="list-group-item" onclick="songSelected(17)">17. Halász Judit: Állatkerti útmutató</a>
-  <a class="list-group-item" onclick="songSelected(18)">18. Republic: A 67-es úton</a>
-  <a class="list-group-item" onclick="songSelected(19)">19. Republic: Szeretni valakit valamiért</a>
-  <a class="list-group-item" onclick="songSelected(20)">20. Kockaéder: Rendezni valamit valamiért</a>
-  <a class="list-group-item" onclick="songSelected(21)">21. Bikini: Közeli helyeken</a>
-  <a class="list-group-item" onclick="songSelected(22)">22. KFT: Afrika</a>
-  <a class="list-group-item" onclick="songSelected(23)">23. Fenyő Miklós (Hungária) - Csavard fel a szőnyeget!</a>
-  <a class="list-group-item" onclick="songSelected(24)">24. Kockaéder: Számold ki a törteket</a>
-  <a class="list-group-item" onclick="songSelected(25)">25. Bergendy (ill. Demjén Ferenc, Halott Pénz): Darabokra törted a szívem</a>
-  <a class="list-group-item" onclick="songSelected(26)">26. Emberek: Tábortűz</a>
-  <a class="list-group-item" onclick="songSelected(27)">27. Baj van a részeg tengerésszel</a>
-  <a class="list-group-item" onclick="songSelected(28)">28. Vuk</a>
-  <a class="list-group-item" onclick="songSelected(29)">29. Mézga család</a>
-  <a class="list-group-item" onclick="songSelected(30)">30. Napoleon Boulevard: Legyetek jók, ha tudtok!</a>
-  <a class="list-group-item" onclick="songSelected(31)">31. Kistehén Tánczenekar: Szájbergyerek</a>
-  <a class="list-group-item" onclick="songSelected(32)">32. 16 tonnát raksz...</a>
-  <a class="list-group-item" onclick="songSelected(33)">33. Tudod, hogy nincs bocsánat (Kaláka - József Attila)</a>
-  <a class="list-group-item" onclick="songSelected(34)">34. Az Éjszaka (Kaláka - Radnóti Miklós)</a>
-  <a class="list-group-item" onclick="songSelected(35)">35. Charlie: Könnyű álmot hozzon az éj</a>
-  <a class="list-group-item" onclick="songSelected(36)">36. Omega: Gyöngyhajú lány</a>
-  <a class="list-group-item" onclick="songSelected(37)">37. Rejtelmek (Sebő Ferenc - József Attila)</a>
-  <a class="list-group-item" onclick="songSelected(38)">38. Bájoló (Radnóti Miklós verse alapján)</a>
-  <a class="list-group-item" onclick="songSelected(39)">39. Kispál és a Borz: Kicsit szomorkás</a>
-  <a class="list-group-item" onclick="songSelected(40)">40. Tankcsapda: Mennyország tourist</a>
-  <a class="list-group-item" onclick="songSelected(41)">41. Tankcsapda: Örökké tart</a>
-  <a class="list-group-item" onclick="songSelected(42)">42. Bella ciao (magyar)</a>
-  <a class="list-group-item" onclick="songSelected(43)">43. Queen: We will rock you</a>
-  <a class="list-group-item" onclick="songSelected(44)">44. Leonard Cohen: Hallelujah</a>
-  <a class="list-group-item" onclick="songSelected(45)">45. Simon and Garfunkel: The Sound of Silence</a>
-  <a class="list-group-item" onclick="songSelected(46)">46. Bobby McFerrin: Don’t Worry</a>
-  <a class="list-group-item" onclick="songSelected(47)">47. Beatles: Yellow submarine</a>
-  <a class="list-group-item" onclick="songSelected(48)">48. The Beatles: Yesterday</a>
-  <a class="list-group-item" onclick="songSelected(49)">49. Mi vagyunk a Grund! (Dés, Geszti)</a>
-  <a class="list-group-item" onclick="songSelected(50)">50. Mi vagyunk a Pí (Dés, Katona)</a>
-  <a class="list-group-item" onclick="songSelected(51)">51. Paff, a bűvös sárkány</a>
-  <a class="list-group-item" onclick="songSelected(52)">52. Republic: Szállj el kismadár</a>
-  <a class="list-group-item" onclick="songSelected(53)">53. Beatrice: 8 óra munka</a>
-  <a class="list-group-item" onclick="songSelected(54)">54. Nem csak a húszéveseké a világ</a>
-  <a class="list-group-item" onclick="songSelected(55)">55. Kockaéder: Nem csak a geometria a menő</a>
-  <a class="list-group-item" onclick="songSelected(56)">56. Banks of the Ohio</a>
-  <a class="list-group-item" onclick="songSelected(57)">57. Green Day: Boulevard of Broken Dreams</a>
-  <a class="list-group-item" onclick="songSelected(58)">58. Emil Rulez: Hello tourist</a>
+    <a class="list-group-item" onclick="songSelected(1)">1. Ég a város</a>
+    <a class="list-group-item" onclick="songSelected(2)">2. A csitári hegyek alatt</a>
+    <a class="list-group-item" onclick="songSelected(3)">3. Már minálunk babám</a>
+    <a class="list-group-item" onclick="songSelected(4)">4. Edda: A kör</a>
+    <a class="list-group-item" onclick="songSelected(5)">5. Edda: A hűtlen</a>
+    <a class="list-group-item" onclick="songSelected(6)">6. Quimby: Most múlik pontosan</a>
+    <a class="list-group-item" onclick="songSelected(7)">7. Quimby: Autó egy szerpentinen</a>
+    <a class="list-group-item" onclick="songSelected(8)">8. Illés: Az utcán</a>
+    <a class="list-group-item" onclick="songSelected(9)">9. Illés: Miért hagytuk, hogy így legyen</a>
+    <a class="list-group-item" onclick="songSelected(10)">10. Illés: Újra itt van</a>
+    <a class="list-group-item" onclick="songSelected(11)">11. Bródy: Ha én rózsa volnék</a>
+    <a class="list-group-item" onclick="songSelected(12)">12. Kockaéder: Ha én gyökjel volnék</a>
+    <a class="list-group-item" onclick="songSelected(13)">13. Omega: Petróleumlámpa</a>
+    <a class="list-group-item" onclick="songSelected(14)">14. Omega: Régi csibészek</a>
+    <a class="list-group-item" onclick="songSelected(15)">15. LGT: Valaki mondja meg</a>
+    <a class="list-group-item" onclick="songSelected(16)">16. Halász Judit: Micimackó</a>
+    <a class="list-group-item" onclick="songSelected(17)">17. Halász Judit: Állatkerti útmutató</a>
+    <a class="list-group-item" onclick="songSelected(18)">18. Republic: A 67-es úton</a>
+    <a class="list-group-item" onclick="songSelected(19)">19. Republic: Szeretni valakit valamiért</a>
+    <a class="list-group-item" onclick="songSelected(20)">20. Kockaéder: Rendezni valamit valamiért</a>
+    <a class="list-group-item" onclick="songSelected(21)">21. Bikini: Közeli helyeken</a>
+    <a class="list-group-item" onclick="songSelected(22)">22. KFT: Afrika</a>
+    <a class="list-group-item" onclick="songSelected(23)">23. Fenyő Miklós (Hungária) - Csavard fel a szőnyeget!</a>
+    <a class="list-group-item" onclick="songSelected(24)">24. Kockaéder: Számold ki a törteket</a>
+    <a class="list-group-item" onclick="songSelected(25)">25. Bergendy (ill. Demjén Ferenc, Halott Pénz): Darabokra törted a szívem</a>
+    <a class="list-group-item" onclick="songSelected(26)">26. Tábortűz (Emberek)</a>
+    <a class="list-group-item" onclick="songSelected(27)">27. Baj van a részeg tengerésszel</a>
+    <a class="list-group-item" onclick="songSelected(28)">28. Vuk</a>
+    <a class="list-group-item" onclick="songSelected(29)">29. Mézga család</a>
+    <a class="list-group-item" onclick="songSelected(30)">30. Legyetek jók, ha tudtok! (Napoleon Boulevard)</a>
+    <a class="list-group-item" onclick="songSelected(31)">31. Kistehén Tánczenekar: Szájbergyerek</a>
+    <a class="list-group-item" onclick="songSelected(32)">32. 16 tonnát raksz...</a>
+    <a class="list-group-item" onclick="songSelected(33)">33. Tudod, hogy nincs bocsánat (Kaláka - József Attila)</a>
+    <a class="list-group-item" onclick="songSelected(34)">34. Az Éjszaka (Kaláka - Radnóti Miklós)</a>
+    <a class="list-group-item" onclick="songSelected(35)">35. Könnyű álmot hozzon az éj (Charlie)</a>
+    <a class="list-group-item" onclick="songSelected(36)">36. Omega: Gyöngyhajú lány</a>
+    <a class="list-group-item" onclick="songSelected(37)">37. Rejtelmek (Sebő Ferenc - József Attila)</a>
+    <a class="list-group-item" onclick="songSelected(38)">38. Bájoló (Radnóti Miklós verse alapján)</a>
+    <a class="list-group-item" onclick="songSelected(39)">39. Kispál és a Borz: Kicsit szomorkás</a>
+    <a class="list-group-item" onclick="songSelected(40)">40. Tankcsapda: Mennyország tourist</a>
+    <a class="list-group-item" onclick="songSelected(41)">41. Tankcsapda: Örökké tart</a>
+    <a class="list-group-item" onclick="songSelected(42)">42. Bella ciao (magyar)</a>
+    <a class="list-group-item" onclick="songSelected(43)">43. Queen: We will rock you</a>
+    <a class="list-group-item" onclick="songSelected(44)">44. Leonard Cohen: Hallelujah</a>
+    <a class="list-group-item" onclick="songSelected(45)">45. Simon and Garfunkel: The Sound of Silence</a>
+    <a class="list-group-item" onclick="songSelected(46)">46. Bobby McFerrin: Don’t Worry</a>
+    <a class="list-group-item" onclick="songSelected(47)">47. Beatles: Yellow submarine</a>
+    <a class="list-group-item" onclick="songSelected(48)">48. The Beatles: Yesterday</a>
+    <a class="list-group-item" onclick="songSelected(49)">49. Mi vagyunk a Grund! (Dés, Geszti)</a>
+    <a class="list-group-item" onclick="songSelected(50)">50. Mi vagyunk a Pí (Dés, Katona)</a>
+    <a class="list-group-item" onclick="songSelected(51)">51. Paff, a bűvös sárkány</a>
+    <a class="list-group-item" onclick="songSelected(52)">52. Aranka, szeretlek</a>
+    <a class="list-group-item" onclick="songSelected(53)">53. Toto: Africa</a>
+    <a class="list-group-item" onclick="songSelected(54)">54. Nem csak a húszéveseké a világ</a>
+    <a class="list-group-item" onclick="songSelected(55)">55. Kockaéder: Nem csak a geometria a menő</a>
+    
 </div>
-
 
 <div id="1"><p>
 <h4>1. Ég a város<br></h4>
@@ -147,38 +140,20 @@ span.boys {
 Nem is egy ház, hanem száz is<br>
 Tűz, tűz, tűz, tűz<br>
 Jaj, de messze a kanál is/kanális<br>
-  <br>
+ <br>
 </p></div>
 <div id="2"><p>
-<h4>2. Varga Miklós: Európa<br></h4>
-Dús hajába tép a szél,<br>
-Kék szemében ott a szenvedély.<br>
-Foltos, sokszín ruhája oly sokszor elszakadt,<br>
-Álma adja az álmokat.<br>
-<br>
-Megszülte hűtlen gyermekét,<br>
-Nem sírt, akkor sem ha elvetélt,<br>
-Akármi történt, mindig büszke nő maradt,<br>
-Így élt a sok-sok év alatt.<br>
-<br>
-Refr.:<br>
-Ezért értsd meg, szeretem őt,<br>
-A vén Európát, a büszke nőt!<br>
-Nagyon kérlek, becsüld meg őt,<br>
-A vén Európát, a gyönyörű nőt!<br>
-<br>
-Magából ad, ha enni kérsz,<br>
-Testével véd, amikor visszatérsz,<br>
-Ölén a szerelem minden öröme hívogat,<br>
-Arcában látod az arcodat<br>
-<br>
-Olasz csizmáján a nap<br>
-Remélem mindörökre megmarad<br>
-A sötét felhő végre mind aludni tér<br>
-Földjében túl sok már a vér<br>
-<br>
-Refr. 4x <br>
-<br>
+<h4>2. A csitári hegyek alatt<br></h4>
+A csitári hegyek alatt régen leesett a hó.<br>
+Azt hallottam kisangyalom, véled esett el a ló.<br>
+Kitörted a kezedet, mivel ölelsz engemet?<br>
+Így hát kedves kisangyalom, nem lehetek a tied.<br>
+ <br>
+Amott alá van egy erdő, jaj de nagyon messze van.<br>
+Kerek erdő közepébe két rozmaring bokor van.<br>
+Egyik hajlik a vállamra, másik a babáméra.<br>
+Így hát kedves kis angyalom, tiéd leszek valaha<br>
+ <br>
 </p></div>
 <div id="3"><p>
 <h4>3. Már minálunk babám<br></h4>
@@ -223,7 +198,7 @@ Kör közepén állok,<br>
 Így könnyen eltaláltok<br>
 Így könnyen eltaláltok, rosszak.<br>
 <br>
-Refr.:(2x)<br>
+Ref.:(2x)<br>
 Ha egyszer odébbállok,<br>
 A kör közepébõl majd hiányzok,<br>
 Rám többé nem találtok, rosszak.<br>
@@ -253,6 +228,7 @@ Refr.:(6x)<br>
 Ha egyszer odébbállok,<br>
 A kör közepéből majd hiányzok<br>
 Rám többé nem találtok, rosszak. <br>
+<br>
 <br>
 </p></div>
 <div id="5"><p>
@@ -337,41 +313,40 @@ furulyáját elejti egy angyalszárnyú kígyóbűvölő<br>
 <br>
 </p></div>
 <div id="7"><p>
-<h4>7. Ohio<br></h4>
-Megkértem őt, szép kedvesen<br>
-Jöjjön velem, Sétáljon velem<br>
-Vár ránk a part, hív a nagy folyó<br>
-Csobban a víz, hív az Ohio!<br>
-<br>
-Megmondtam én, enyém leszel!<br>
-És többé már, senki nem ölel,<br>
-Vár ránk a part, hív a nagy folyó<br>
-Csobban a víz, hív az Ohio!<br>
-<br>
-És amikor, átöleltem, <br>
-a késemet nekiszegeztem<br>
-Felkiáltott: "Kérlek ne ölj meg!<br>
-A halálba, ne küldj engemet!<br>
-<br>
-Megmondtam én, enyém leszel!<br>
-És többé már, senki nem ölel,<br>
-Vár ránk a part, hív a nagy folyó<br>
-Csobban a víz, hív az Ohio!<br>
-<br>
-Éjfél után, mentem haza<br>
-Jaj, mit tettem, ó, én ostoba<br>
-Megöltem őt, akit szerettem<br>
-Mert nem kellett, ó a szerelem!<br>
-<br>
-Megmondtam én, enyém leszel!<br>
-És többé már, senki nem ölel,<br>
-Vár ránk a part, hív a nagy folyó<br>
-Csobban a víz, hív az Ohio!<br>
-<br>
-Megmondtam én, enyém leszel!<br>
-És többé már, senki nem ölel,<br>
-Vár ránk a part, hív a nagy folyó<br>
-Csobban a víz, hív az Ohio!<br>
+<h4>7. Quimby: Autó egy szerpentinen<br></h4>
+Most olyan könnyű minden,<br>
+Szinte csak a semmi tart.<br>
+A kutyákat elengedtem,<br>
+És a forgószél elvitte a vihart.<br>
+ <br>
+Alattunk a tenger,<br>
+Szemben a nap zuhan.<br>
+Nyeljük a csíkokat<br>
+És a világ pajkos szellőként suhan.<br>
+ <br>
+Tékozló angyal a magasban,<br>
+Böffent nincs baj, nincs haragban senkivel.<br>
+G dúrban zúgják a fákon a kabócák,<br>
+Hogy láss csodát, láss ezer csodát,<br>
+ <br>
+Láss ezer csodát.<br>
+ <br>
+Éhes pupillákkal<br>
+Vállamra ördög ül.<br>
+Ballal elpöckölöm<br>
+Az élet jobb híján egyedül.<br>
+ <br>
+Autó egy szerpentinen<br>
+Mely ki tudja merre tart.<br>
+Kócos kis romantika<br>
+Tejfogával a szívembe mart.<br>
+ <br>
+Tékozló angyal a magasban,<br>
+Böffent nincs baj, nincs haragban senkivel.<br>
+E dúrban zúgják a fákon a kabócák,<br>
+Hogy láss csodát, láss ezer csodát,<br>
+ <br>
+Láss ezer csodát.<br>
 <br>
 </p></div>
 <div id="8"><p>
@@ -381,7 +356,7 @@ Az utcát járom egymagamban,<br>
 Nincsen semmihez se kedvem,<br>
 De érzem azt, hogy nincs ez rendben így.<br>
 <br>
-Ref.: Bár tudnám, hova, de hova, de hova, de hova megyek,<br>
+Bár tudnám, hova, de hova, de hova, de hova megyek,<br>
 Hova, de hova, de hova, de hova megyek,<br>
 Hova, de hova, de hova, de hova megyek.<br>
 <br>
@@ -414,7 +389,7 @@ Megyek hozzád, meg nem állok én.<br>
 És most már tudom, már tudom, már tudom, hogy hova megyek,<br>
 Tudom, már tudom, már tudom, hogy veled leszek,<br>
 Tudom, már tudom, már tudom, hogy veled leszek.<br>
-  <br>
+ <br>
 </p></div>
 <div id="9"><p>
 <h4>9. Illés: Miért hagytuk, hogy így legyen<br></h4>
@@ -468,6 +443,7 @@ Légy a vendégünk, légy az emlékünk,<br>
 És hogy elférjünk, arra megkérünk,<br>
 Ne csinálj felfordulást.<br>
 <br>
+<br>
 </p></div>
 <div id="11"><p>
 <h4>11. Bródy: Ha én rózsa volnék<br></h4>
@@ -495,7 +471,7 @@ Ha én zászló volnék, sohasem lobognék,<br>
 Mindenféle szélnek haragosa lennék,<br>
 Akkor lennék boldog, ha kifeszítenének,<br>
 S nem lennék játéka mindenféle szélnek.<br>
-  <br>
+ <br>
 </p></div>
 <div id="12"><p>
 <h4>12. Kockaéder: Ha én gyökjel volnék<br></h4>
@@ -509,7 +485,7 @@ Hisz gyökvonás nélkül nincs megoldóképlet.<br>
 Ha én egész volnék, természetes volnék,<br>
 3-mal osztható Catalan-szám volnék,<br>
 Két szomszédom közül prím lenne mindkettő,<br>
-Például lehetnék én a 42<br>
+Például lehetnék én a 42.<br>
 <br>
 Ha én függvény volnék, csak Dirichlet volnék,<br>
 Bármely kis részemen monoton nem lennék,<br>
@@ -549,7 +525,7 @@ Bámulsz, hogy mi van, nézel, mint a moziban,<br>
 És két szép szemedben táncol.<br>
 Petróleumlámpa,<br>
 Milyen szép a lángja.<br>
-  <br>
+ <br>
 </p></div>
 <div id="14"><p>
 <h4>14. Omega: Régi csibészek<br></h4>
@@ -573,10 +549,10 @@ Hullott a könnyünk, annyit nevettünk<br>
 Azt tettük, amit szerettünk.<br>
 Bámultuk sokat a kiscsajokat,<br>
 Így éltünk boldog napokat.<br>
-  <br>
+ <br>
 ||: Régi csibészek, nem ismernek engem meg,<br>
 Nézik, mit nézek, aztán tovább...mennek. :||<br>
-  <br>
+ <br>
 </p></div>
 <div id="15"><p>
 <h4>15. LGT: Valaki mondja meg<br></h4>
@@ -617,7 +593,7 @@ De anyám azt nem mondta, mért nem e földön, <br>
 Anyám nem mondta, mondd, miért.<br>
 <br>
 Madarak jönnek ...<br>
-  <br>
+ <br>
 </p></div>
 <div id="16"><p>
 <h4>16. Halász Judit: Micimackó<br></h4>
@@ -728,28 +704,28 @@ Szeretni valakit valamiért.<br>
 Ne tudja senki, ne értse senki,<br>
 hogy miért.<br>
 Szeretni valakit valamiért.<br>
-  <br>
+ <br>
 Ezer életen és ezer bajon át,<br>
 Szeretni valakit valamiért.<br>
 Akkor is, hogyha nem lehet,<br>
 hogyha fáj,<br>
 Szeretni valakit valamiért.<br>
-  <br>
+ <br>
 Fenn az ég s lent a föld,<br>
 Álmodunk s felébredünk.<br>
 Minden út körbe fut,<br>
 Béke van, felejts el minden<br>
 háborút!<br>
-  <br>
+ <br>
 Esik a hó és szemembe fúj a szél.<br>
 Szeretni valakit valamiért.<br>
 Ég a gyertya ég, el ne aludjék.<br>
 Szeretni valakit valamiért.<br>
-  <br>
+ <br>
 Ezer életen és ezer bajon át...<br>
-  <br>
+ <br>
 Fenn az ég s lent a föld...<br>
-  <br>
+ <br>
 Fenn az ég s lent a föld...<br>
 <br>
 </p></div>
@@ -766,7 +742,8 @@ Rendezni valamit valamiért<br>
 Akkor is, hogyha félig nyílt, vagy ha zárt.<br>
 Rendezni valamit valamiért<br>
 <br>
-R: Fenn az e, s lenn a pí,<br>
+R:<br>
+Fenn az e, s lenn a pí,<br>
 Számolunk, s átrendezünk.<br>
 Szorzatok, összegek.<br>
 De nem lehet felírni minden részletet.<br>
@@ -780,15 +757,7 @@ Rendezni valamit valamiért<br>
 Akkor is, hogyha félig nyílt, vagy ha zárt.<br>
 Rendezni valamit valamiért<br>
 <br>
-R: Fenn az e, s lenn a pí,<br>
-Számolunk, s átrendezünk.<br>
-Szorzatok, összegek.<br>
-De nem lehet felírni minden részletet.<br>
-<br>
-R: Fenn az e, s lenn a pí,<br>
-Számolunk, s átrendezünk.<br>
-Szorzatok, összegek.<br>
-De nem lehet felírni minden részletet.<br>
+2x R<br>
 <br>
 </p></div>
 <div id="21"><p>
@@ -813,7 +782,7 @@ Közeli helyeken, dombokon, hegyeken,<br>
 Most is visszhangzik a léptem.<br>
 <br>
 Itt ül az idő a nyakamon ...<br>
-  <br>
+ <br>
 </p></div>
 <div id="22"><p>
 <h4>22. KFT: Afrika<br></h4>
@@ -871,6 +840,7 @@ Ma este végre minden a fején áll,<br>
 Egész éjjel miénk a lakás,<br>
 Csak holnap lesz a nagytakarítás.<br>
 Gyerünk, gyerünk, táncolnék veled!<br>
+<br>
 <br>
 Csavard fel a szőnyeget még ma éjjel,<br>
 Csavard fel a szőnyeget,<br>
@@ -971,11 +941,12 @@ Hogy egy összetört szívet megragassz!<br>
 <br>
 </p></div>
 <div id="26"><p>
-<h4>26. Emberek: Tábortűz<br></h4>
+<h4>26. Tábortűz (Emberek)<br></h4>
 Isten hozott, hisz csak a jók jöhetnek el.<br>
 Ülj hát közel, a szeretet éltet, átölel.<br>
 S ki a csillagok közt él, mind aki rég odaköltözött,<br>
 Most visszatér s leül a tűz mögött.<br>
+<br>
 <br>
 Sok szív mélyén,<br>
 Ott ég ez a tűz egy kör közepén.<br>
@@ -987,6 +958,7 @@ Egy dal, s Te újra mellém ülsz,<br>
 És lobog a tábortűz, szél belekarolt.<br>
 Szól egy dal, és a lelkünk összeér,<br>
 A gyönyörű tűzfénynél, napszínű a hold!<br>
+<br>
 <br>
 Súgd meg nekem, tudod, így ígérted rég,<br>
 A nagy titkokat, amit egy kisgyerek nem ért.<br>
@@ -1033,7 +1005,7 @@ Minden áldott reggel!<br>
 Lökd a fenékre a víztömlővel...<br>
 <br>
 Haj, hé, de ...<br>
-  <br>
+ <br>
 Dob'bele, itt van a mentőcsónak…<br>
 <br>
 Haj, hé, de ...<br>
@@ -1041,7 +1013,7 @@ Haj, hé, de ...<br>
 Lógjon a lába az orrkötélen…<br>
 <br>
 Haj, hé, de ...<br>
-  <br>
+ <br>
 Kösd hamar oda csak a nagykorlátra...<br>
 <br>
 Haj, hé, de ...<br>
@@ -1109,9 +1081,10 @@ Egyse nyafog, kesereg tréfa a baj<br>
 <br>
 Néha légy bolond, egy kicsikét…<br>
 <br>
+<br>
 </p></div>
 <div id="30"><p>
-<h4>30. Napoleon Boulevard: Legyetek jók, ha tudtok!<br></h4>
+<h4>30. Legyetek jók, ha tudtok! (Napoleon Boulevard)<br></h4>
 Végre elmúlt, ennek is vége,<br>
 Az iskola udvara üresen áll.<br>
 Vége az évnek, pont ez a lényeg,<br>
@@ -1221,7 +1194,7 @@ Szent Péter engem ne hívj én nem mehetek<br>
 A lelkem a vállalatot illeti meg.<br>
 <br>
 Hogy megszülettem eső hullt a telepeken<br>
-és küszködj és melózz lett a becenevem<br>
+és küzködj és melózz lett a becenevem<br>
 Mint kölykét az oroszlán, nevelt a sors<br>
 S az asszony hallgat mert a kezem gyors.<br>
 <br>
@@ -1247,12 +1220,12 @@ Tudod, hogy nincs bocsánat,	<br>
 hiába hát a bánat.<br>
 Légy, ami lennél: férfi.<br>
 A fű kinő utánad.<br>
-  <br>
+ <br>
 A bűn az nem lesz könnyebb,<br>
 hiába hull a könnyed.<br>
 Hogy bizonyság vagy erre,<br>
 legalább azt köszönjed.<br>
-      <br>
+    	<br>
 Ne vádolj, ne fogadkozz,<br>
 ne légy komisz magadhoz,<br>
 ne hódolj és ne hódíts,<br>
@@ -1262,31 +1235,32 @@ Maradj fölöslegesnek,<br>
 a titkokat ne lesd meg,<br>
 S ezt az emberiséget,<br>
 hisz ember vagy, ne vesd meg.   	<br>
-  <br>
+ <br>
 Emlékezz, hogy hörögtél,<br>
 s hiába könyörögtél,<br>
 Hamis tanúvá lettél<br>
 saját igaz pörödnél.<br>
-  <br>
+ <br>
 Hittél a könnyű szónak,<br>
 fizetett pártfogónak<br>
 s lásd soha, soha senki<br>
 nem mondta, hogy te jó vagy.<br>
-  <br>
+ <br>
 Megcsaltak, úgy szerettek,<br>
 csaltál, s így nem szerethetsz.<br>
 Most hát a töltött fegyvert<br>
 szorítsd üres szívedhez,<br>
-  <br>
+ <br>
 Vagy vess el minden elvet<br>
 s még remélj hű szerelmet,<br>
 hisz mint kutya hinnél<br>
 abban, ki bízna benned.<br>
-  <br>
+ <br>
 Tudod, hogy nincs bocsánat<br>
 hiába hát a bánat.<br>
 Légy, ami lennél: férfi.<br>
 A fű kinő utánad.<br>
+<br>
 <br>
 </p></div>
 <div id="34"><p>
@@ -1301,15 +1275,17 @@ alszik a pergő búzaszemekben a nyár,<br>
 alszik a holdban a láng - hideg érem az égen;<br>
 fölkel az ősz és lopni lopakszik az éjben. :||<br>
 <br>
+<br>
 Fölkel az ősz és lopni lopakszik az éjben.<br>
 <br>
 </p></div>
 <div id="35"><p>
-<h4>35. Charlie: Könnyű álmot hozzon az éj<br></h4>
+<h4>35. Könnyű álmot hozzon az éj (Charlie)<br></h4>
 A szürke házfalakra rászakadt már az est,<br>
 Valahol felsír még egy kisgyerek.<br>
 Hallom, az édesanyja dallal csitítja el,<br>
 Hallgatom a nyitott ablaknál, s végül én is énekelem.<br>
+<br>
 <br>
 Könnyű álmot hozzon az éj,<br>
 Altasd el, hűs dunai szél!<br>
@@ -1317,6 +1293,7 @@ Aludj el, kisember, aludj el!<br>
 Álmodj hintát, homokozót,<br>
 Álmodj rétet, kis patakot,<br>
 Aludj el, kisember, aludj el!<br>
+<br>
 <br>
 Nézd fent, a háztetőn, ott neked táncol a hold,<br>
 Lenéznek rád a fénylő csillagok!<br>
@@ -1348,33 +1325,31 @@ Elaludt mély zöld tó ölén<br>
 Az embereknek fájt a sötét<br>
 Ő megsajnált, eljött közénk<br>
 <br>
-Ref (2x)<br>
-Igen, jött egy gyöngyhajú lány<br>
+||: Igen, jött egy gyöngyhajú lány<br>
 Álmodtam, vagy igaz talán<br>
 Így lett a föld, az ég<br>
-Zöld meg kék, mint rég<br>
+Zöld meg kék, mint rég :||<br>
 <br>
 A hajnal kelt, ő hazament<br>
 Kék hegy mögé, virág közé<br>
 Kis kék elefánt, mesét mesélt<br>
 Szép gyöngyhaján alszik a fény<br>
 <br>
-Ref (2x)<br>
-Igen, él egy gyöngyhajú lány<br>
+||: Igen, él egy gyöngyhajú lány<br>
 Álmodtam, vagy igaz talán<br>
 Gyöngyhaj azóta rég<br>
-Mély tengerbe ért<br>
+Mély tengerbe ért :||<br>
 <br>
 Mikor nagyon egyedül vagy<br>
 Lehull hozzád egy kis csillag<br>
 Hófehér gyöngyök vezessenek<br>
 Mint jó vándort fehér kövek<br>
 <br>
-Ref (2x)<br>
-Igen, hív egy gyöngyhajú lány<br>
+||:Igen, hív egy gyöngyhajú lány<br>
 Álmodtam, vagy igaz talán<br>
 Ránk vár gyöngye mögött<br>
-Ég és föld között<br>
+Ég és föld között :|| <br>
+<br>
 <br>
 </p></div>
 <div id="37"><p>
@@ -1431,7 +1406,7 @@ vesd le ruhádat, már esik is kinn,<br>
 már esik is kinn, már esik is kinn,<br>
 vesd le az inged mossa az eső,<br>
 mossa az eső össze szívünket.<br>
-  <br>
+ <br>
 </p></div>
 <div id="39"><p>
 <h4>39. Kispál és a Borz: Kicsit szomorkás<br></h4>
@@ -1439,31 +1414,31 @@ Kicsit szomorkás a hangulatom máma<br>
 Kicsit belém szállt a boldogtalanság<br>
 Kicsit úgy érzem magam, mint a durcás kisgyerek<br>
 Kinek elvették a játékát.<br>
-  <br>
+ <br>
 Kicsit szomorkás a hangulatom máma<br>
 Kicsit borús lett ez a bűbájos világ<br>
 Kicsit elbántak velem, na de történt már ilyen<br>
 Szívem harag nélkül gondol rád.<br>
-  <br>
+ <br>
 Gyere, gyere, gyere drága cimborám<br>
 Gyorsan vígasztalj<br>
 Látod, összeroppanok már<br>
 Gyere, gyere, gyere drága jó gitár<br>
 Kell egy vígasz dal<br>
 Amitől a panasz hamarosan odébbáll.<br>
-  <br>
+ <br>
 Kicsit szomorkás a hangulatom mama<br>
 Olyan szokatlan a boldogtalanság<br>
 Kicsit megrázom magam, mire minden rendbe van<br>
 Újra emelt fővel nézek rád.<br>
-  <br>
+ <br>
 Gyere, gyere, gyere drága cimborám<br>
 Gyorsan vígasztalj<br>
 Látod, összeroppanok már<br>
 Gyere, gyere, gyere drága jó gitár<br>
 Kell egy vígasz dal<br>
 Amitől a panasz hamarosan odébbáll.<br>
-  <br>
+ <br>
 Kicsit szomorkás a hangulatom máma<br>
 Kicsit belém szállt a boldogtalanság<br>
 Kicsit megrázom magam, mire minden rendbe van<br>
@@ -1776,6 +1751,7 @@ To the neon God they made.<br>
 And the sign flashed out its warning,<br>
 In the words that it was forming.<br>
 And the sign said, 'the words of the prophets<br>
+<br>
 Are written on the subway walls<br>
 And tenement halls.<br>
 Whispered in the sound of silence<br>
@@ -1837,6 +1813,7 @@ And our friends are all on board<br>
 Many more of them live next door<br>
 And the band begins to play<br>
 <br>
+<br>
 We all live in a yellow submarine<br>
 Yellow submarine, yellow submarine<br>
 We all live in a yellow submarine<br>
@@ -1865,28 +1842,28 @@ Yellow submarine, yellow submarine<br>
 </p></div>
 <div id="48"><p>
 <h4>48. The Beatles: Yesterday<br></h4>
+<br>
 Yesterday, all my troubles seemed so far away<br>
 Now it looks as though they're here to stay<br>
 Oh, I believe in yesterday<br>
-<br>
 Suddenly, I'm not half the man I used to be<br>
 There's a shadow hanging over me.<br>
 Oh, yesterday came suddenly<br>
-<br>
 Why she had to go I don't know she wouldn't say<br>
 I said something wrong, now I long for yesterday<br>
-<br>
 Yesterday, love was such an easy game to play<br>
 Now I need a place to hide away<br>
 Oh, I believe in yesterday<br>
-<br>
 Why she had to go I don't know she wouldn't say<br>
 I said something wrong, now I long for yesterday<br>
-<br>
 Yesterday, love was such an easy game to play<br>
 Now I need a place to hide away<br>
 Oh, I believe in yesterday<br>
 Mm mm mm mm mm mm mm<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 </p></div>
 <div id="49"><p>
@@ -1921,24 +1898,15 @@ Legyen szabad a grund<br>
 Véssük ide ma fel, hogy megmarad ez a hely<br>
 Vagy egyszer belehalunk<br>
 <br>
-(lányok) / <span class="boys">(fiúk)</span><br>
-Álljunk bele ha kell, bármi jöjjön is el   /
-<span class="boys"> Miért félnénk, miért élnénk,<br></span>
-Legyen szabad a grund   /
-<span class="boys"> Ha nem egy álomért?<br></span>
-Véssük ide ma fel, hogy megmarad ez a hely   /
-<span class="boys"> Miért félnénk, miért élnénk<br></span>
-Vagy egyszer belehalunk   /
-<span class="boys"> Ha nem egy álomért?<br></span>
+Álljunk bele ha kell, bármi jöjjön is el   /  Miért félnénk, miért élnénk,<br>
+Legyen szabad a grund   /  Ha nem egy álomért?<br>
+Véssük ide ma fel, hogy megmarad ez a hely   /  Miért félnénk, miért élnénk<br>
+Vagy egyszer belehalunk   /  Ha nem egy álomért?<br>
 <br>
-Álljunk bele ha kell, bármi jöjjön is el   /  
-<span class="boys"> Miért félnénk, miért élnénk,<br></span>
-Legyen szabad a grund   /  
-<span class="boys"> Ha nem egy álomért?<br></span>
-Véssük ide ma fel, hogy megmarad ez a hely   /  
-<span class="boys"> Miért félnénk, miért élnénk,<br></span>
-Vagy egyszer belehalunk   /  
-<span class="boys"> Ha nem egy álomért?<br></span>
+Álljunk bele ha kell, bármi jöjjön is el   /  Miért félnénk, miért élnénk,<br>
+Legyen szabad a grund   /  Ha nem egy álomért?<br>
+Véssük ide ma fel, hogy megmarad ez a hely   /  Miért félnénk, miért élnénk,<br>
+Vagy egyszer belehalunk   /  Ha nem egy álomért?<br>
 <br>
 Miért félnénk, miért élnénk,<br>
 Ha nem egy álomért?<br>
@@ -1998,13 +1966,13 @@ Paff, a bűvös sárkány,   senkitől se félt<br>
 <br>
 Paff, a bűvös sárkány,   senkitől se félt<br>
 Álomország tengerpartján játékok közt élt.<br>
-Volt egy játszótársa, úgy hívták, hogy Jani,<br>
+Volt egy játszótársa, úgy hívták, hogy Jackie,<br>
 Jó barátja madártollat hozott őneki<br>
 <br>
 A tengert együtt járták, repült a kis hajó,<br>
 Paff hátára felült Jani, így utazni jó.<br>
 Sok király és sok herceg és mind a kalóz nép<br>
-Köszöntek, ha jőni látták, mert tisztelték nevét.<br>
+Köszöntötték, ha jőni látták, mert tisztelték nevét.<br>
 Hiszen ő volt<br>
 <br>
 Paff, a bűvös sárkány, ki senkitől se félt<br>
@@ -2029,97 +1997,117 @@ Paff, a bűvös sárkány, senkitől se félt<br>
 <br>
 </p></div>
 <div id="52"><p>
-<h4>52. Republic: Szállj el kismadár<br></h4>
-Szállj el kismadár<br>
-Nézd meg, hogy merre jár<br>
-Mondd el, hogy merre járhat Ő<br>
+<h4>52. Aranka, szeretlek<br></h4>
+Valahol a mező végén vártalak,<br>
+Ott voltam egyedül, és jött a vihar.<br>
+De te arra fele sem dugtad orrodat,<br>
+Elszomorodtam, s aztán haza mentem<br>
+Pedig úgy egyeztük meg hogy találkozunk,<br>
+Aztán kiderült, hogy mással találkoztál.<br>
+Legalább szólhattál volna,<br>
+Hogy ne álljak a mező szélén, mint egy idióta hülye.<br>
+Oh je.<br>
 <br>
-Mondd el, hogy szeretem<br>
-Mondd el, hogy kell nekem<br>
-Mondd el, hogy semmi más nem kell<br>
+Vártalak, elhagytál.<br>
+Csengő Zolival megcsaltál.<br>
+Ha Zolit elkapom, felakasztom,<br>
+Me' tiszta szívből szeretlek.<br>
+Miér csináltad ezt velem?<br>
+A szukkot es én fizettem.<br>
+Te soha semmit nem fizettél,<br>
+Me' egy turkálóban dolgozol.<br>
 <br>
-Csak a Hold az égen <br>
-Csak a Nap ragyogjon<br>
-Simogasson a szél<br>
-Simogasson, ha arcomhoz ér<br>
-Csak a Hold ragyogjon<br>
-Csak a Nap az égen<br>
-Nekem semmi más nem kell<br>
+Vettem neked lepcsit es.<br>
+Laskaszűrőt, tepsi szettet.<br>
+De te ezt nem értékelted,<br>
+Me' Csengő Zolival megcsaltál.<br>
+Azt hazudtad, hogy szeretsz engemet.<br>
+Kölcsönt es felvettem neked.<br>
+De közbe a hátam mögött röhögtél,<br>
+S pofátlanul kisajtoltál teee...<br>
 <br>
-Kell, hogy rátalálj<br>
-Szállj el kismadár<br>
-Nézd meg, hogy merre járhat Ő!<br>
+Valahol a mező végén vártalak,<br>
+De te arra fele sem dugtad orrodat.<br>
+Kisajtoltál, utána megcsaltál.<br>
+És én hittem, hogy egyszer majd még nekünk kölykünk is lesz.<br>
+Sokat sírok éjszakánként utánad,<br>
+Adj még egy esélyt, hogy egyszer újra kezdjük el.<br>
+Kiáltom neked, hogy szeretlek!<br>
+Aranka Szeretlek.<br>
+A szénabugjában, ha akarod tiszta csóréra levetközök neked.<br>
 <br>
-Vidd el a levelem<br>
-Mondd el, hogy kell nekem<br>
-Mondd el, hogy semmi más nem kell<br>
+Kérlek szépen ne hagy el.<br>
+Mindent megteszek érted<br>
+Felvágom az ereimet,<br>
+Felakasztom a testemet<br>
+Aztán sírhatsz utánam.<br>
+Megbánod, mit csináltál<br>
+Bőghetsz anyádéknak,<br>
+Hogy Csengő Zolival megcsaltál.<br>
 <br>
-Csak a hold az égen <br>
-Csak a nap ragyogjon<br>
-Simogasson a szél<br>
-Simogasson, ha arcomhoz ér<br>
-Csak a hold ragyogjon<br>
-Csak a nap az égen<br>
-Nekem semmi más nem kell<br>
+Küttem neked smst.<br>
+De te arra sem válaszoltál.<br>
+Egy csomószor bippetelek,<br>
+Utána meg kikapcsoltad.<br>
+Pentru moment aţi accesat.<br>
+Ezt mondta a telefonod,<br>
+De az es az én telefonom,<br>
+Me azt es én vettem neked.<br>
 <br>
-Soha ne gyere, ha most nem jössz<br>
-Soha ne szeress, ha most nem vagy itt<br>
-Soha ne gyere, ha most nem jössz<br>
-Soha ne szeress, ha most nem vagy itt<br>
+Valahol a mező végén vártalak,<br>
+De te arra fele sem dugtad orrodat<br>
+Kisajtoltál, utána megcsaltál.<br>
+És én hittem, hogy egyszer majd még nekünk kölykünk is lesz.<br>
+Sokat sírok éjszakánként utánad,<br>
+Adj még egy esélyt, hogy egyszer újra kezdjük el.<br>
+Kiáltom neked, hogy szeretlek!<br>
+Aranka Szeretlek.<br>
+A szénabugjában, ha akarod tiszta csóréra levetközök neked.<br>
 <br>
-Csak a Hold az égen <br>
-Csak a Nap ragyogjon<br>
-Simogasson a szél<br>
-Simogasson, ha arcomhoz ér<br>
-Csak a Hold ragyogjon<br>
-Csak a Nap az égen<br>
-Nekem semmi más nem kell<br>
+Utoljára elmondom neked.<br>
+Sohasem a szexet akartam,<br>
+Nekem a lélek a fontos, nem a testy,<br>
+Ezt örökre jegyezd meg.<br>
 <br>
 </p></div>
 <div id="53"><p>
-<h4>53. Beatrice: 8 óra munka<br></h4>
-A munkának vége, kijössz a gyárból,<br>
-Egy vodkától erős vagy és bátor,<br>
-Egy részeg fazon a kezed után nyúl,<br>
-Nem tudod miért, jól belerúgsz.<br>
+<h4>53. Toto: Africa<br></h4>
 <br>
-Mer' elfogyott a türelmed már,<br>
-Pedig szabad a csók, szabad a tánc,<br>
-Száz éve Párizsban az volt a jó,<br>
-A kommün ezért kötelet adott.<br>
+I hear the drums echoing tonight<br>
+But she hears only whispers of some quiet conversation<br>
+She's coming in, 12:30 flight<br>
+The moonlit wings reflect the stars that guide me towards salvation<br>
+I stopped an old man along the way<br>
+Hoping to find some long forgotten words or ancient melodies<br>
+He turned to me as if to say, "Hurry boy, it's waiting there for you"<br>
 <br>
-Nyolc óra munka, Nyolc óra pihenés<br>
-Nyolc óra szórakozás.<br>
-Nyolc óra munka, Nyolc óra pihenés<br>
-Nyolc óra szórakozás. <br>
+It's gonna take a lot to take me away from you<br>
+There's nothing that a hundred men or more could ever do<br>
+I bless the rains down in Africa<br>
+Gonna take some time to do the things we never had<br>
 <br>
-A kocsmában, ott van a nagy élet,<br>
-Tompulnak az agyak, élesek a kések,<br>
-A világos sörtől savanyú a szád,<br>
-Nem ígéri senki, jobb élet vár rád.<br>
+The wild dogs cry out in the night<br>
+As they grow restless, longing for some solitary company<br>
+I know that I must do what's right<br>
+As sure as Kilimanjaro rises like Olympus above the Serengeti<br>
+I seek to cure what's deep inside, frightened of this thing that I've become<br>
 <br>
-Nyolc óra munka, Nyolc óra pihenés<br>
-Nyolc óra szórakozás.<br>
-Nyolc óra munka, Nyolc óra pihenés<br>
-Nyolc óra szórakozás.<br>
+It's gonna take a lot to drag me away from you<br>
+There's nothing that a hundred men or more could ever do<br>
+I bless the rains down in Africa<br>
+Gonna take some time to do the things we never had<br>
 <br>
-Hagymát eszek túróval,<br>
-Nem bírok a fúróval.<br>
+Hurry boy, she's waiting there for you<br>
 <br>
-De a munkának vége, kijössz a gyárból,<br>
-Egy vodkától erős vagy és bátor,<br>
-Egy részeg fazon a kezed után nyúl,<br>
-Nem tudod miért, jól belerúgsz. <br>
+It's gonna take a lot to drag me away from you<br>
+There's nothing that a hundred men or more could ever do<br>
+I bless the rains down in Africa<br>
+I bless the rains down in Africa<br>
 <br>
-Nézed, hogy mi folyik itt,<br>
-Ami befolyik, az rögtön kifolyik,<br>
-A világos sörtől savanyú a szád,<br>
-Nem ígéri senki, jobb élet vár rád.<br>
-<br>
-Nyolc óra munka, Nyolc óra pihenés<br>
-Nyolc óra szórakozás.<br>
-Nyolc óra munka, Nyolc óra pihenés<br>
-Nyolc óra szórakozás.<br>
+I bless the rains down in Africa<br>
+I bless the rains down in Africa<br>
+I bless the rains down in Africa<br>
+Gonna take some time to do the things we never had<br>
 <br>
 </p></div>
 <div id="54"><p>
@@ -2156,9 +2144,11 @@ Teljes lesz, teljes lesz az én dalseregem!<br>
 <br>
 Nem csak a húszéveseké…<br>
 <br>
+<br>
 </p></div>
 <div id="55"><p>
 <h4>55. Kockaéder: Nem csak a geometria a menő<br></h4>
+<br>
 Millió hatvány létezik, mi kiszámítható,<br>
 De a pont körhatványa is ugyanolyan jó.<br>
 Nem lehet ám minden problémát lerajzolni,<br>
@@ -2174,20 +2164,14 @@ De a koszinusztételek majd felőrölnek.<br>
 Legyen sima Heron-képlet, helyettesíts be,<br>
 Írd csak be, írd csak be a matekfüzetbe:<br>
 <br>
-R: Nem csak a geometria a menő,<br>
-Néha az algebra is jó, mert abban van az erő.<br>
-Lehet oszthatóság vagy prímtényező,<br>
-Nem csak a geometria a menő.<br>
+R<br>
 <br>
 Hiába vagy überprofi a vektorokban,<br>
 Hiába tudod: összegük is a síkon van.<br>
 Jön majd rá merőleges, és a metszéspontod<br>
 Kiszámításakor majd azt gondolod:<br>
 <br>
-R: Nem csak a geometria a menő,<br>
-Néha az algebra is jó, mert abban van az erő.<br>
-Lehet oszthatóság vagy prímtényező,<br>
-Nem csak a geometria a menő.<br>
+R<br>
 <br>
 Képzeld: bent vagy az iskolában az iskolapadon,<br>
 És előtted van egy paralelepipedon,<br>
@@ -2199,159 +2183,9 @@ Bár néha-néha talán jó, abban is lehet erő.<br>
 Gyere és derítsük ki, hogy mi az a<br>
 Koordinátageometria!<br>
 <br>
-</p></div>
-<div id="56"><p>
-<h4>56. Banks of the Ohio<br></h4>
-I asked my love to take a walk<br>
-To take a walk, just a little walk<br>
-Down beside where the waters flow<br>
-Down by the banks of the Ohio<br>
-<br>
-And only say that you'll be mine<br>
-In no others' arms entwine<br>
-Down beside where the waters flow<br>
-Down by the banks of the Ohio<br>
-<br>
-I held a knife against his breast<br>
-As into my arms he pressed<br>
-He cried "my love, don't you murder me<br>
-I'm not prepared for eternity"<br>
-<br>
-And only say that you'll be mine<br>
-In no others' arms entwine<br>
-Down beside where the waters flow<br>
-Down by the banks of the Ohio<br>
-<br>
-I wandered home 'tween twelve and one<br>
-I cried, "My God, what have I done?"<br>
-I've killed the only man I love<br>
-He would not take me for his bride<br>
-<br>
-And only say that you'll be mine<br>
-In no others' arms entwine<br>
-Down beside where the waters flow<br>
-Down by the banks of the Ohio<br>
 <br>
 </p></div>
-<div id="57"><p>
-<h4>57. Green Day: Boulevard of Broken Dreams <br></h4>
-I walk a lonely road<br>
-The only one that I have ever known<br>
-Don't know where it goes<br>
-But it's home to me and I walk alone<br>
-<br>
-I walk this empty street<br>
-On the Boulevard of Broken Dreams<br>
-Where the city sleeps<br>
-And I'm the only one and I walk alone<br>
-<br>
-I walk alone<br>
-I walk alone<br>
-I walk alone<br>
-I walk a...<br>
-<br>
-My shadow's (the) only one that walks beside me<br>
-My shallow heart's the only thing that's beating<br>
-Sometimes I wish someone out there will find me<br>
-'Til then I walk alone<br>
-<br>
-Ah-ah, ah-ah, ah-ah, aaah-ah<br>
-Ah-ah, ah-ah, ah-ah<br>
-<br>
-I'm walking down the line<br>
-That divides me somewhere in my mind<br>
-On the border line<br>
-Of the edge and where I walk alone<br>
-<br>
-Read between the lines<br>
-What's fucked up and everything's alright<br>
-Check my vital signs<br>
-To know I'm still alive and I walk alone<br>
-<br>
-I walk alone<br>
-I walk alone<br>
-I walk alone<br>
-I walk a...<br>
-<br>
-My shadow's (the) only one that walks beside me<br>
-My shallow heart's the only thing that's beating<br>
-Sometimes I wish someone out there will find me<br>
-'Til then I walk alone<br>
-<br>
-Ah-ah, ah-ah, ah-ah, aaah-ah<br>
-Ah-ah, ah-ah, ah-ah, aaah<br>
-<br>
-I walk this empty street<br>
-On the Boulevard of Broken Dreams<br>
-Where the city sleeps<br>
-And I'm the only one and I walk a...<br>
-<br>
-My shadow's (the) only one that walks beside me<br>
-My shallow heart's the only thing that's beating<br>
-Sometimes I wish someone out there will find me<br>
-'Til then I walk alone...<br>
-<br>
-</p></div>
-<div id="58"><p>
-<h4>58. Emil Rulez: Hello tourist<br></h4>
-Hello tourist du bist in Budapest, <br>
-capitol of Hungary,<br>
-For a little money I will show you <br>
-this beautiful city<br>
-<br>
-I am a student, I am twenty-three<br>
-I study sociology<br>
-on the very famous E-ötvös Loránd <br>
-science university <br>
-<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side,<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side<br>
-<br>
-This is called Danubius, which is a river,<br>
-and also a radio<br>
-that is a Bridge, which is called Lánc<br>
-and also one radio<br>
-<br>
-To the right side you can see the Buda part<br>
-which is one half of the city<br>
-To the left side you can see the Pest<br>
-and the Parliament of Hungary<br>
-<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side,<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side<br>
-<br>
-Look at the hill there is a castle<br>
-it was the old king's residency<br>
-we have no more kings<br>
-because Hungary is a parliamental democracy<br>
-<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side,<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side<br>
-<br>
-I am sure you are tired now <br>
-you can to left now this ship Hapci<br>
-if you liked the tour you can give me now<br>
-some Hungarian money<br>
-<br>
-We will stop now, you can go to casino,<br>
-bye-bye, arrivederci,<br>
-I hope you enjoyed the sightseeing tour,<br>
-auf wiedersehen, bonne nuit!<br>
-<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side,<br>
-Hello tourist on the right side,<br>
-Hello tourist on the left side<br>
-x2<br>
-<br>
-</p></div>
-  
+
 </div>
 
 </body>
