@@ -8,14 +8,14 @@
 
 <style>
 div {
-	margin-left: 10px;
+  margin-left: 10px;
   margin-right: 10px;
   color: #CCCCCC;
 }
 
 div.row {
-	position: absolute;
-	margin: 0 15px 0 15px;
+  position: absolute;
+  margin: 0 15px 0 15px;
 }
 
 h4 {
@@ -68,29 +68,30 @@ input[type=number]::-webkit-outer-spin-button {
 
 <script type="text/javascript">
 
-	function songSelected(id) {
-		document.getElementById('songInput').value = id;
-		songNumberChanged(id);
-	}
+  function songSelected(id) {
+    document.getElementById('songInput').value = id;
+    songNumberChanged(id);
+  }
 
-	function songNumberChanged(id) {
-		if (!(id >= 0 && id <= 58)) id = 0;
-		for (i = 0; i <= 58; ++i)
-		{
-			if (i == id) document.getElementById(i).style.display = 'block';
-			else document.getElementById(i).style.display = 'none';
-		}
-		document.getElementById("song-row").scrollTop = 0;
-	}
+  function songNumberChanged(id) {
+    if (!(id >= 0 && id <= 58)) id = 0;
+    for (i = 0; i <= 58; ++i)
+    {
+      if (i == id) document.getElementById(i).style.display = 'block';
+      else document.getElementById(i).style.display = 'none';
+    }
+    document.getElementById("song-row").scrollTop = 0;
+    document.getElementById('songInput').blur();
+  }
 
 //  This would prevent leaving.
 //	window.onbeforeunload = function() {
 //		return "";
 //	}
 
-	window.onload = function() {
-		songSelected(0);
-	}
+  window.onload = function() {
+    songSelected(0);
+  }
 
 </script>
 
