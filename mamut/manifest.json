@@ -3,9 +3,9 @@
     "short_name": "Daloskönyv",
     "start_url": "/mamut/",
     "display": "standalone",
-    "background_color": "#FFFFFF",
+    "background_color": "#000000",
     "description": "MaMuT daloskönyv a tábortűzhöz",
-    "theme_color": "#e67817",
+    "theme_color": "#FF8800",
     "icons": [
       {
         "src": "./icon-250x250.png",
