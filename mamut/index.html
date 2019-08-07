@@ -15,7 +15,7 @@ div {
 
 div.row {
 	position: absolute;
-	margin: 0 20px 0 20px;
+	margin: 0 15px 0 15px;
 }
 
 h4 {
@@ -31,6 +31,7 @@ p {
 a.list-group-item {
   padding: 5px;
   background-color: black;
+  font-size: 120%;
 }
 
 input.form-control {
@@ -45,9 +46,24 @@ input.form-control {
   margin: auto;
 }
 
+.form-group {
+  margin-bottom: 5px;
+}
+
 span.boys {
   color: #2A9FD6;
 }
+
+td {
+  padding: 10px 5px 5px 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 </style>
 
 <script type="text/javascript">
@@ -67,9 +83,10 @@ span.boys {
 		document.getElementById("song-row").scrollTop = 0;
 	}
 
-	window.onbeforeunload = function() {
-		return "";
-	}
+//  This would prevent leaving.
+//	window.onbeforeunload = function() {
+//		return "";
+//	}
 
 	window.onload = function() {
 		songSelected(0);
@@ -77,7 +94,7 @@ span.boys {
 
 </script>
 
-<meta name="theme-color" content="#e67817">
+<meta name="theme-color" content="#FF8800">
 <link rel="icon" type="image/png" href="./favicon.ico">
 <link rel="manifest" href="./manifest.json">
 <script src="./app.js"></script>
@@ -85,13 +102,13 @@ span.boys {
 
 <body>
 
-<div class="row" style="height: 70px; overflow: visible">
+<div class="row" style="height: 50px; overflow: visible">
 <div class="form-group">
 <table>
 <tr>
-<td><label for="songInput" class="menu-text">Sorszám:</label></td>
-<td style="padding: 5px"><input type="number" class="form-control" id="songInput" style="width:80px;" onchange="songNumberChanged(this.value)"></td>
-<td style="padding: 20px;"><button class="btn btn-outline-warning" onclick="songSelected(0)">Dalok listája</button></td>
+<td style="padding: 10px 0px 5px 0px"><label for="songInput" class="menu-text">Sorszám:</label></td>
+<td><input type="number" class="form-control" id="songInput" style="width: 50px; padding: 6px 10px; text-align: center;" onchange="songNumberChanged(this.value)"></td>
+<td><button class="btn btn-outline-warning" style="padding: 6px 10px;" onclick="songSelected(0)">Dalok listája</button></td>
 </tr>
 </table>
 </div>
