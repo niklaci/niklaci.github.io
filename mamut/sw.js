@@ -14,7 +14,7 @@ self.addEventListener("install", async event => {
 
 self.addEventListener("fetch", event => {
     const req = event.request;
-    networkFirst(req);
+    event.respondWith(networkFirst(req));
     // The below code allows condidition-based caching
     // if (/.*(html)$/.test(req.url)) {
     //   event.respondWith(networkFirst(req));
