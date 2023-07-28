@@ -104,14 +104,14 @@ div#song-row {
   }
 
   function songNumberChanged(id) {
-    if (!(id >= 0 && id <= 60)) id = 0;
-    for (i = 0; i <= 60; ++i)
+    if (!(id >= 0 && id <= 68)) id = 0;
+    for (i = 0; i <= 68; ++i)
     {
       if (i == id) document.getElementById(i).style.display = 'block';
       else document.getElementById(i).style.display = 'none';
     }
     document.getElementById('songInput').blur();
-    document.getElementById("song-row").scrollTop = 0;
+    document.getElementById('song-row').scrollTop = 0;
   }
 
 //  This would prevent leaving.
