@@ -77,7 +77,26 @@ To add a song from `songs-to-add/` (or any raw lyrics text) into
      material calls for a call-and-response split (see song 49 as an
      example).
 
+## Removing a song / replacing one in place
+
+To drop a song, either delete it outright and renumber everything after it
+down by one (tedious — touches every later `<a>`/`<div id>` plus both script
+limits), or, if another song needs a home anyway, swap the new song into the
+deleted slot instead:
+
+1. Replace the target song's `<a class="list-group-item">` text and
+   `<div id="N">` contents (title + lyrics) with the replacement song's.
+2. Delete the replacement song's old list entry and `<div id="M">` block
+   from wherever it was (typically the end of the file).
+3. If the replacement was the last song, lower both hardcoded max-id limits
+   in the `<script>` block by one; otherwise leave them alone — no
+   renumbering of the songs in between is needed.
+
+This keeps numbering contiguous without touching every song in between.
+
 ## Songs added this way
 
-- **72. Vance Joy: Riptide** — added from
-  `songs-to-add/vance joy - riptide.txt` (2026-08-04).
+- **63. Vance Joy: Riptide** — added as song 72 from
+  `songs-to-add/vance joy - riptide.txt` (2026-08-04), then moved into slot
+  63 (2026-08-06) to replace the removed song **63. Bródy-Halász Judit:
+  Mindannyian mások vagyunk**. The max song id is back to 71.
