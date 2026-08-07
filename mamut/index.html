@@ -65,6 +65,10 @@ input#songInput {
   text-align: center;
 }
 
+input#songSearch {
+  margin: 5px 0 10px 0;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -110,9 +114,22 @@ div#song-row {
       if (i == id) document.getElementById(i).style.display = 'block';
       else document.getElementById(i).style.display = 'none';
     }
+    if (id == 0) {
+      document.getElementById('songSearch').value = '';
+      filterSongs('');
+    }
     document.getElementById('songInput').blur();
     document.getElementById('song-row').scrollTop = 0;
     if (!backButtonPushed) history.pushState(id, "");
+  }
+
+  function filterSongs(query) {
+    query = query.trim().toLowerCase();
+    var items = document.getElementById('0').querySelectorAll('a.list-group-item');
+    for (var i = 0; i < items.length; ++i) {
+      var text = items[i].textContent.toLowerCase();
+      items[i].style.display = text.indexOf(query) !== -1 ? '' : 'none';
+    }
   }
 
 //  This would prevent leaving.
@@ -154,6 +171,7 @@ div#song-row {
 
 <div id="song-row" class="row">
 <div id ="0" class="list-group">
+  <input type="search" class="form-control" id="songSearch" placeholder="Keresés cím vagy előadó szerint..." autocomplete="off" oninput="filterSongs(this.value)">
   <a class="list-group-item" onclick="songSelected(1)">1. Ég a város</a>
   <a class="list-group-item" onclick="songSelected(2)">2. Varga Miklós: Európa</a>
   <a class="list-group-item" onclick="songSelected(3)">3. Már minálunk babám</a>
